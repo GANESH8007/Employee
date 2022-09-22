@@ -28,7 +28,8 @@ public class EmployeeController {
 		Employee employee=this.iEmployeeService.getEmployee(eId);
 		
 		//http://localhost:9090/record/emp/13111
-		List records=this.restTemplate.getForObject("http://localhost:9090/record/emp/" +eId, List.class);
+		//List records=this.restTemplate.getForObject("http://localhost:9090/record/emp/" +eId, List.class);
+		List records=this.restTemplate.getForObject("http:record-Microservice/record/emp/" +eId, List.class);
 		employee.setRecords(records);
 		return employee;
 	}
